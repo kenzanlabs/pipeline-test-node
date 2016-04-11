@@ -48,7 +48,8 @@
     "lazypipe": "1.0.1",
     "mocha": "2.3.3",
     "mocha-junit-reporter": "1.8.0",
-    "pipeline-handyman": "0.3.0"
+    "pipeline-handyman": "0.3.0",
+    "sinon": "1.17.3"
   },
   "devDependencies": {
     "del": "2.0.2",
