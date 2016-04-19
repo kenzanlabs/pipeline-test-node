@@ -52,6 +52,6 @@
   },
   "devDependencies": {
     "del": "2.0.2",
-    "pipeline-validate-js": "0.3.0"
+    "pipeline-validate-js": "1.0.0-rc2"
   }
 }
