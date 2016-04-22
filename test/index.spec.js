@@ -4,7 +4,7 @@ var del = require('del');
 var expect = require('chai').expect;
 var fs = require('fs');
 var gulp = require('gulp');
-var testPipeline = require('../src/index.js')();
+var testPipeline = require('../src/index.js');
 
 describe('pipeline-test-node', function() {
 
