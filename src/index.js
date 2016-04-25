@@ -42,20 +42,17 @@ module.exports = {
 };
 
 function testPipeline() {
-  var pipeline = makePipe();
-
-  return pipeline();
-}
-
-function makePipe() {
+  var stream;
   handyman.log('Running mocha tests');
 
   nodeCoverage();
 
-  return lazypipe()
+  stream = lazypipe()
     .pipe(mocha, config.plugins.mocha)
     .pipe(istanbul.writeReports, config.plugins.istanbul)
     .pipe(istanbul.enforceThresholds, config.plugins.istanbul);
+
+  return stream();
 }
 
 function nodeCoverage() {
