@@ -45,7 +45,7 @@ function pipelineFactory() {
   var stream;
   handyman.log('Running mocha tests');
 
-  generateNodeCoverage();
+  generateNodeCoverageReport();
 
   stream = lazypipe()
     .pipe(mocha, config.plugins.mocha)
@@ -55,7 +55,7 @@ function pipelineFactory() {
   return stream();
 }
 
-function generateNodeCoverage() {
+function generateNodeCoverageReport() {
 
   return gulp.src(config.files.src)
     // Covering files
