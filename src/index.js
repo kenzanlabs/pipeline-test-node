@@ -37,15 +37,15 @@ module.exports = {
     options = options || {};
     config = handyman.mergeConf(config, options);
 
-    return testPipeline();
+    return pipelineFactory();
   }
 };
 
-function testPipeline() {
+function pipelineFactory() {
   var stream;
   handyman.log('Running mocha tests');
 
-  nodeCoverage();
+  generateNodeCoverage();
 
   stream = lazypipe()
     .pipe(mocha, config.plugins.mocha)
@@ -55,7 +55,7 @@ function testPipeline() {
   return stream();
 }
 
-function nodeCoverage() {
+function generateNodeCoverage() {
 
   return gulp.src(config.files.src)
     // Covering files
