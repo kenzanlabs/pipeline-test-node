@@ -36,12 +36,12 @@ var config = {
   }
 };
 
-var testPipeline = require('pipeline-test-node')(config);
+var testPipeline = require('pipeline-test-node');
 
 gulp.task('default', function() {
   return gulp
     .src(['src/**/*.spec.js'], {read: false})
-    .pipe(testPipeline.test());
+    .pipe(testPipeline.test(config));
 });
 ```
 
