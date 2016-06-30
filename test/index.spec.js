@@ -22,11 +22,11 @@ describe('pipeline-test-node', function() {
             expect(err).to.be.a('null');
           });
 
-          fs.statSync('coverage/lcov-report/index.html', function(err) {
+          fs.statSync('reports/cobertura-coverage.xml', function(err) {
             expect(err).to.be.a('null');
           });
 
-          fs.statSync('coverage/coverage-final.json', function(err) {
+          fs.statSync('reports/coverage-final.json', function(err) {
             expect(err).to.be.a('null');
           });
 
