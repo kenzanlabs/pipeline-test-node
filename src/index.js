@@ -26,7 +26,7 @@ var config = {
         }
       },
       thresholds: {
-        global: 90
+        global: 80
       }
     }
   }
@@ -49,7 +49,7 @@ function pipelineFactory() {
 
   stream = lazypipe()
     .pipe(mocha, config.plugins.mocha)
-    .pipe(istanbul.writeReports, config.plugins.istanbul)
+    .pipe(istanbul.writeReports, config.plugins.istanbul.writeReports)
     .pipe(istanbul.enforceThresholds, config.plugins.istanbul);
 
   return stream();

@@ -28,7 +28,9 @@ var config = {
   },
   plugins: {
     istanbul: {
-      reporters: ['text-summary'],
+      writeReports: {
+        reporters: ['html'],
+      }
       thresholds: {
         global: 70
       }
@@ -60,6 +62,13 @@ Default:
 config = {
   plugins: {
     istanbul: {
+      writeReports: {
+        dir: './reports/',
+        reporters: ['json', 'text-summary', 'cobertura'],
+        reportOpts: {
+          dir: './reports'
+        }
+      },
       thresholds: {
         global: 90
       }
