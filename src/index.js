@@ -43,6 +43,7 @@ module.exports = {
 
 function pipelineFactory() {
   var stream;
+  
   handyman.log('Running mocha tests');
 
   generateNodeCoverageReport();
