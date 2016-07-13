@@ -11,7 +11,7 @@ describe('pipeline-test-node', function() {
   describe('Test Results Generations', function() {
 
     it('should test that reports were generated correctly with default config', function (done) {
-      //remove existing reports to avoid false positives
+      //  remove existing reports to avoid false positives
       del.sync(['./reports']);
 
       gulp.src('test/**/*.js')
