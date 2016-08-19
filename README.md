@@ -16,6 +16,8 @@ Gulp Pipeline for running unit tests for NodeJS modules using [mocha[].
 
 `npm install pipeline-test-node --save-dev`
 
+**Note:** Please be aware that it's suggested that you install the latest version of npm to ensure the best possible experience with this pipeline.
+
 ## Usage
 ```javascript
 var gulp = require('gulp');
