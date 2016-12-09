@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var testPipeline = require('../src/index.js');
+var testPipeline = require('../../src/index.js');
 
 gulp.task('test:fail', function(){
   return gulp

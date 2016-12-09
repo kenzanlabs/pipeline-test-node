@@ -6,7 +6,7 @@ var validatePipeline = require('pipeline-validate-js');
 
 gulp.task('test', function(){
   return gulp
-    .src(['test/**/*.js'])
+    .src(['test/*.js', '!test/fixtures'])
     .pipe(testPipeline.test());
 });
 

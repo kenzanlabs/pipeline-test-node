@@ -14,7 +14,7 @@ describe('pipeline-test-node', function() {
 
     it('should exit process when test error', function(done) {
       var child = exec('gulp test:fail', {
-        cwd: path.resolve(__dirname, '../fixtures')
+        cwd: path.resolve(__dirname, './fixtures')
       }, function() {
         done();
       });
@@ -25,7 +25,7 @@ describe('pipeline-test-node', function() {
 
     it('should exit process with 0 when test passes', function(done) {
       var child = exec('gulp test:pass', {
-        cwd: path.resolve(__dirname, '../fixtures')
+        cwd: path.resolve(__dirname, './fixtures')
       }, function() {
         done();
       });
@@ -42,7 +42,7 @@ describe('pipeline-test-node', function() {
       //  remove existing reports to avoid false positives
       del.sync(['./reports']);
 
-      gulp.src('test/**/*.js')
+      gulp.src(['test/*.js', '!test/fixtures'])
         .pipe(testPipeline.test())
         .on('end', function() {
 
