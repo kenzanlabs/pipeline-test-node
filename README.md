@@ -41,13 +41,33 @@ var config = {
 };
 
 var testPipeline = require('pipeline-test-node');
+var test = testPipeline.test(config);
+var coverage = testPipeline.coverage();
 
-gulp.task('default', function() {
+gulp.task('coverage', function() {
+  return gulp.src(config.files.src)
+    .pipe(coverage());
+});
+
+gulp.task('default', ['coverage'], function() {
   return gulp
     .src(['src/**/*.spec.js'], {read: false})
-    .pipe(testPipeline.test(config));
+    .pipe(test());
 });
 ```
+
+> Coverage task must be run first to initialize `istanbul` for coverage reports.
+
+## Methods
+
+### `coverage()`
+Partial pipeline for initializing `istanbul` for reporting.
+
+### `mochaPipeline()`
+Returns a partial pipeline for running mocha.
+
+### `test(config)`
+Returns a partial pipeline for running mocha tests and writing reports.
 
 ## Options
 
@@ -84,7 +104,7 @@ config = {
 
 ## Results
 
-  This pipeline returns an object. This object receives a stream with the files to test, and you can call the _test_ method to run the unit tests. It uses mocha, and validates based on the configuration provided in _config.mochaConfig_. If no configuration is provided it will use mocha's default.  
+   This pipeline returns an object. This object receives a stream with the files to test, and you can call the _test_ method to run the unit tests. It uses mocha, and validates based on the configuration provided in _config.mochaConfig_. If no configuration is provided it will use mocha's default.  
 
 
 ## LICENSE

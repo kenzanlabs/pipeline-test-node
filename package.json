@@ -44,9 +44,9 @@
     "gulp": "3.9.0",
     "gulp-istanbul": "0.10.2",
     "gulp-load-plugins": "0.10.0",
-    "gulp-mocha": "2.1.3",
+    "gulp-mocha": "3.0.1",
     "lazypipe": "1.0.1",
-    "mocha": "2.3.3",
+    "mocha": "3.2.0",
     "mocha-junit-reporter": "1.8.0",
     "pipeline-handyman": "0.3.0"
   },
